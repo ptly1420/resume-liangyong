@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>梁勇 · 云平台运维工程师 / 数据库 SA</title>
+<meta name="description" content="梁勇简历 — 云平台运维工程师 / 数据库 SA，近8年云平台运维与稳定性建设经验。">
+<style>
+  :root{
+    --primary:#1e3a5f;
+    --primary-light:#2c5282;
+    --accent:#0e7c7b;
+    --text:#2d3748;
+    --muted:#718096;
+    --bg:#f7fafc;
+    --card:#ffffff;
+    --border:#e2e8f0;
+    --tag-bg:#ebf8ff;
+    --tag-text:#2c5282;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+    font-size:15px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .container{
+    max-width:1080px;
+    margin:0 auto;
+    padding:32px 20px 60px;
+  }
+  /* 顶部 Hero */
+  .hero{
+    background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 100%);
+    color:#fff;
+    border-radius:16px;
+    padding:40px 44px;
+    box-shadow:0 10px 30px rgba(30,58,95,.18);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    right:-60px;top:-60px;
+    width:220px;height:220px;
+    background:radial-gradient(circle,rgba(255,255,255,.12) 0%,transparent 70%);
+    border-radius:50%;
+  }
+  .hero h1{font-size:34px;font-weight:700;letter-spacing:1px;margin-bottom:6px}
+  .hero .subtitle{font-size:17px;color:#bee3f0;font-weight:500;margin-bottom:18px}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:14.5px;color:#e2e8f0}
+  .hero .meta span{display:inline-flex;align-items:center;gap:6px}
+  .hero .meta a{color:#e2e8f0;text-decoration:none;border-bottom:1px dotted rgba(255,255,255,.4)}
+  .hero .meta a:hover{color:#fff;border-color:#fff}
+  .badge{
+    position:absolute;right:30px;top:30px;
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.25);
+    padding:6px 14px;border-radius:999px;
+    font-size:13px;color:#fff;backdrop-filter:blur(4px);
+  }
+  /* 布局 */
+  .layout{
+    display:grid;
+    grid-template-columns:330px 1fr;
+    gap:24px;
+    margin-top:24px;
+  }
+  .sidebar{display:flex;flex-direction:column;gap:20px}
+  .main{display:flex;flex-direction:column;gap:20px}
+  .card{
+    background:var(--card);
+    border-radius:12px;
+    padding:22px 24px;
+    box-shadow:0 2px 10px rgba(0,0,0,.04);
+    border:1px solid var(--border);
+  }
+  .card h2{
+    font-size:18px;color:var(--primary);
+    font-weight:700;margin-bottom:16px;
+    padding-bottom:10px;
+    border-bottom:2px solid var(--accent);
+    display:flex;align-items:center;gap:8px;
+  }
+  /* 信息表 */
+  .info-table{width:100%;border-collapse:collapse;font-size:14px}
+  .info-table td{padding:7px 4px;border-bottom:1px dashed var(--border)}
+  .info-table td:first-child{color:var(--muted);width:42%}
+  .info-table td:last-child{color:var(--text);font-weight:500}
+  .info-table tr:last-child td{border-bottom:none}
+  /* 意向 */
+  .intent p{font-size:14px;margin-bottom:6px}
+  .intent p b{color:var(--primary-light)}
+  /* 证书 */
+  .cert-item{
+    display:flex;gap:10px;align-items:flex-start;
+    padding:10px 0;border-bottom:1px dashed var(--border);
+  }
+  .cert-item:last-child{border-bottom:none}
+  .cert-item .emoji{font-size:20px;line-height:1.4}
+  .cert-item .cert-name{font-weight:700;color:var(--primary);font-size:14.5px}
+  .cert-item .cert-desc{color:var(--muted);font-size:13px;margin-top:2px}
+  /* 技能 */
+  .skill{margin-bottom:14px}
+  .skill:last-child{margin-bottom:0}
+  .skill-title{font-weight:700;color:var(--primary);font-size:14.5px;margin-bottom:4px}
+  .skill-desc{font-size:13.5px;color:var(--text);line-height:1.65}
+  /* 经历 */
+  .exp{margin-bottom:22px}
+  .exp:last-child{margin-bottom:0}
+  .exp-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:2px}
+  .exp-head .company{font-size:16px;font-weight:700;color:var(--primary)}
+  .exp-head .role{color:var(--accent);font-weight:600;font-size:14px}
+  .exp-head .date{font-size:13px;color:var(--muted);white-space:nowrap}
+  .exp-sub{font-size:13px;color:var(--muted);margin-bottom:10px}
+  .exp h4{font-size:13.5px;color:var(--primary-light);font-weight:700;margin:10px 0 6px;text-transform:none}
+  .exp ul{list-style:none;padding-left:0}
+  .exp ul li{font-size:13.8px;padding:3px 0 3px 18px;position:relative}
+  .exp ul li::before{content:"▸";color:var(--accent);position:absolute;left:0;top:3px;font-size:12px}
+  .exp ul li b{color:var(--primary)}
+  /* 项目 */
+  .proj{margin-bottom:18px}
+  .proj:last-child{margin-bottom:0}
+  .proj-title{font-size:15px;font-weight:700;color:var(--primary);margin-bottom:6px}
+  .proj ul{list-style:none;padding-left:0}
+  .proj ul li{font-size:13.8px;padding:3px 0 3px 18px;position:relative}
+  .proj ul li::before{content:"▪";color:var(--accent);position:absolute;left:0;top:4px;font-size:10px}
+  .proj a{color:var(--primary-light);word-break:break-all}
+  /* 自我评价 */
+  .eval p{font-size:14px;margin-bottom:12px}
+  .eval p b{color:var(--primary);font-weight:700}
+  .eval .motto-block{
+    background:linear-gradient(135deg,#f0fff4 0%,#e6fffa 100%);
+    border-left:3px solid var(--accent);
+    padding:12px 16px;border-radius:0 8px 8px 0;
+    margin:10px 0;
+    font-size:13.8px;
+  }
+  .eval .motto-block b{color:var(--accent)}
+  footer{
+    text-align:center;color:var(--muted);font-size:12.5px;
+    margin-top:28px;padding:16px;
+  }
+  /* 响应式 */
+  @media (max-width:780px){
+    .container{padding:16px 12px 40px}
+    .hero{padding:28px 22px}
+    .hero h1{font-size:26px}
+    .badge{position:static;margin-bottom:14px;display:inline-block}
+    .layout{grid-template-columns:1fr}
+  }
+  /* 打印 */
+  @media print{
+    body{background:#fff;font-size:12px}
+    .container{max-width:100%;padding:0}
+    .hero{border-radius:0;padding:24px;box-shadow:none;color:#000;background:#fff;border-bottom:3px solid var(--primary)}
+    .hero .subtitle,.hero .meta,.hero .meta a{color:#222}
+    .badge{display:none}
+    .card{box-shadow:none;border:1px solid #ccc;border-radius:6px;padding:14px 16px}
+    .layout{grid-template-columns:1fr;gap:12px}
+    .exp{page-break-inside:avoid}
+    footer{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="badge">🟢 随时到岗</div>
+    <h1>梁勇</h1>
+    <div class="subtitle">云平台运维工程师 / 数据库 SA</div>
+    <div class="meta">
+      <span>📱 184-7466-2084</span>
+      <span>📧 <a href="mailto:qingyun1420@gmail.com">qingyun1420@gmail.com</a></span>
+      <span>📍 广州 / 长沙</span>
+      <span>💼 近 8 年工作经验</span>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- 侧边栏 -->
+    <aside class="sidebar">
+
+      <section class="card">
+        <h2>🧾 基本信息</h2>
+        <table class="info-table">
+          <tr><td>姓名</td><td>梁勇</td></tr>
+          <tr><td>性别</td><td>男</td></tr>
+          <tr><td>学历</td><td>本科</td></tr>
+          <tr><td>专业</td><td>计算机科学与技术</td></tr>
+          <tr><td>工作年限</td><td>近 8 年</td></tr>
+          <tr><td>求职状态</td><td>随时到岗</td></tr>
+        </table>
+      </section>
+
+      <section class="card">
+        <h2>🎯 求职意向</h2>
+        <div class="intent">
+          <p><b>工作性质：</b>全职</p>
+          <p><b>目标岗位：</b>云平台运维工程师 / 数据库 SA / SRE 工程师</p>
+          <p><b>期望薪资：</b>面议</p>
+          <p><b>目标行业：</b>互联网 / 电子商务、金融科技、企业服务、人工智能</p>
+          <p><b>目标地点：</b>广州、深圳、长沙（可接受远程）</p>
+          <p style="margin-top:10px"><b>职业定位：</b>以运维保障与稳定性建设为主，参与平台架构设计与技术方案评审；可在云平台运维、数据库运维、SRE 三类岗位间灵活承接。</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>📜 证书</h2>
+        <div class="cert-item">
+          <div class="emoji">🔴</div>
+          <div>
+            <div class="cert-name">红帽 RHCE</div>
+            <div class="cert-desc">Red Hat Certified Engineer — Linux 系统运维与自动化能力认证</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="emoji">☁️</div>
+          <div>
+            <div class="cert-name">阿里云 ACP</div>
+            <div class="cert-desc">Alibaba Cloud Computing Professional — 阿里云云计算工程师认证</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>🛠️ 专业技能</h2>
+        <div class="skill">
+          <div class="skill-title">☁️ 云平台运维</div>
+          <div class="skill-desc">阿里云、AWS、Azure、腾讯云生产实践，具备多云资源管理、迁移配合与成本治理经验；持有阿里云 ACP 认证。</div>
+        </div>
+        <div class="skill">
+          <div class="skill-title">🗄️ 数据库运维</div>
+          <div class="skill-desc">PolarDB、MySQL、PostgreSQL、Oracle、MongoDB、Redis，熟悉高可用架构、读写分离、分库分表、性能调优、备份容灾；在 Oracle 运维与调优方面有深度实践经验；现任阿里国际站数据库 SA。</div>
+        </div>
+        <div class="skill">
+          <div class="skill-title">🐳 容器编排</div>
+          <div class="skill-desc">Docker、Kubernetes 生产实践，熟悉集群运维与微服务部署。</div>
+        </div>
+        <div class="skill">
+          <div class="skill-title">📊 监控可观测</div>
+          <div class="skill-desc">Prometheus、Grafana、ELK Stack、Zabbix、SkyWalking，参与建设监控告警体系，支持秒级故障发现。</div>
+        </div>
+        <div class="skill">
+          <div class="skill-title">⚙️ 自动化运维</div>
+          <div class="skill-desc">Ansible、Jenkins、GitLab CI/CD，具备运维自动化和标准化建设能力。</div>
+        </div>
+        <div class="skill">
+          <div class="skill-title">🔧 开发能力</div>
+          <div class="skill-desc">Python、Shell、Go、Java，能编写运维工具与自动化脚本，熟悉微服务与 API。</div>
+        </div>
+        <div class="skill">
+          <div class="skill-title">🖥️ 系统网络</div>
+          <div class="skill-desc">Linux（CentOS/Ubuntu/Debian）、Windows Server；熟悉 TCP/IP、HTTP/HTTPS、DNS、负载均衡、CDN；持有 RHCE 认证。</div>
+        </div>
+        <div class="skill">
+          <div class="skill-title">🔐 安全合规</div>
+          <div class="skill-desc">系统加固、漏洞管理、等保配合、数据加密、访问控制。</div>
+        </div>
+        <div class="skill">
+          <div class="skill-title">🤖 AI / 大模型</div>
+          <div class="skill-desc">具备大模型垂直领域微调实战经验，在 ModelScope 开源个人微调垂直模型（QingHeWenfang/qinghe-wenfang）。</div>
+        </div>
+      </section>
+
+    </aside>
+
+    <!-- 主体 -->
+    <main class="main">
+
+      <section class="card">
+        <h2>💼 工作经历</h2>
+
+        <div class="exp">
+          <div class="exp-head">
+            <div>
+              <div class="company">阿里巴巴国际站云平台</div>
+              <div class="role">数据库 SA</div>
+            </div>
+            <div class="date">2024.02 – 至今</div>
+          </div>
+          <h4>核心职责</h4>
+          <ul>
+            <li>负责云平台客户数据库架构咨询，提供阿里云全线数据库产品（PolarDB/MySQL/RDS/MongoDB/Redis）的选型设计与性能优化方案。</li>
+            <li>参与大型数据库迁移项目，配合设计 DTS 数据传输、跨云同步、异地多活方案。</li>
+            <li>配合制定企业级容灾备份策略，保障 RPO/RTO 达标的高可用架构落地。</li>
+            <li>为客户提供容量规划、成本优化、性能调优等全生命周期技术支持。</li>
+          </ul>
+          <h4>关键成果</h4>
+          <ul>
+            <li>服务 <b>50+</b> 大型企业客户，架构咨询满意度 <b>98%</b>，复购率 <b>85%</b>。</li>
+            <li>PolarDB 架构优化使客户核心交易 TPS 显著提升（约 <b>+300%</b>），年度成本降低 <b>40%+</b>。</li>
+            <li>参与 <b>10+</b> PB 级数据库迁移项目，实现零业务中断、零数据丢失。</li>
+            <li>容灾方案实现 <b>RPO &lt; 1 分钟</b>、<b>RTO &lt; 5 分钟</b>，达到金融级标准。</li>
+            <li>Redis 集群优化支撑 QPS 从 <b>10 万</b> 提升至 <b>100 万+</b>。</li>
+          </ul>
+        </div>
+
+        <div class="exp">
+          <div class="exp-head">
+            <div>
+              <div class="company">广东联通产互公司</div>
+              <div class="role">云平台运维工程师</div>
+            </div>
+            <div class="date">2023.05 – 2024.01</div>
+          </div>
+          <h4>核心职责</h4>
+          <ul>
+            <li>负责 20+ 台 Linux 服务器集群的规划、部署、监控与运维管理。</li>
+            <li>参与业务系统架构设计评审，提供运维视角的技术方案与风险评估。</li>
+            <li>负责系统安全加固、漏洞修复、等保配合与安全策略执行。</li>
+          </ul>
+          <h4>关键成果</h4>
+          <ul>
+            <li>自动化脚本优化使运维效率提升约 <b>200%</b>，人工操作错误率降低 <b>80%</b>。</li>
+            <li>MySQL 性能优化使核心业务响应时间缩短约 <b>60%</b>。</li>
+            <li>Zabbix 监控覆盖率达 <b>95%</b>，故障发现缩短至 5 分钟内。</li>
+            <li>数据备份成功率 <b>99.9%</b>，年度故障时间从 72 小时降至 12 小时。</li>
+          </ul>
+        </div>
+
+        <div class="exp">
+          <div class="exp-head">
+            <div>
+              <div class="company">Ericsson 爱立信</div>
+              <div class="role">云平台运维工程师</div>
+            </div>
+            <div class="date">2021.01 – 2023.05</div>
+          </div>
+          <h4>核心职责</h4>
+          <ul>
+            <li>参与 5G 核心网云原生平台架构设计与运维，支撑电信级高可用要求。</li>
+            <li>参与 Kubernetes 容器平台建设与微服务应用管理。</li>
+            <li>参与建设自动化运维体系，含监控告警、故障自愈、容量管理。</li>
+            <li>参与 OpenStack 私有云平台的设计优化与运维管理。</li>
+          </ul>
+          <h4>关键成果</h4>
+          <ul>
+            <li>参与 K8s 容器平台运维，支撑电信核心业务。</li>
+            <li>CI/CD 流水线建设使交付效率提升约 <b>400%</b>，发布成功率 <b>95%+</b>。</li>
+            <li>容器资源调度优化使集群利用率提升约 <b>50%</b>。</li>
+            <li>系统可用性达到电信级 <b>99.999%</b>，年度故障时间 &lt; 5 分钟。</li>
+          </ul>
+        </div>
+
+        <div class="exp">
+          <div class="exp-head">
+            <div>
+              <div class="company">无限极中国</div>
+              <div class="role">运维工程师</div>
+            </div>
+            <div class="date">2019.01 – 2020.12</div>
+          </div>
+          <h4>核心职责</h4>
+          <ul>
+            <li>负责日活 100 万+ 业务系统的 Web 应用服务器部署与维护。</li>
+            <li><b>深度负责 Oracle 数据库的日常运维与性能调优</b>：AWR 报告分析、执行计划解读、慢 SQL 治理、索引与表结构优化、表分区维护；同时参与 MySQL 性能优化。</li>
+            <li>维护 CDN、负载均衡等网络基础设施，保障用户体验。</li>
+            <li>负责线上故障应急响应，处理 PC / App / 小程序各类问题。</li>
+          </ul>
+          <h4>关键成果</h4>
+          <ul>
+            <li>Oracle 深度调优：通过 AWR 分析、SQL 重写与索引优化，使核心业务报表与重点查询响应时间显著缩短。</li>
+            <li>系统架构优化使并发处理能力提升约 <b>150%</b>。</li>
+            <li>数据库索引优化使核心查询性能提升约 <b>200%</b>。</li>
+            <li>CDN 与负载均衡优化使首屏加载时间显著缩短。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>🚀 项目经历</h2>
+
+        <div class="proj">
+          <div class="proj-title">🤖 垂直领域大模型微调与开源</div>
+          <ul>
+            <li><b>项目背景：</b>面向垂直领域场景，构建专用大模型。</li>
+            <li><b>我的角色：</b>独立完成数据构建、微调训练与开源发布。</li>
+            <li><b>项目成果：</b>模型已对外开源至 ModelScope。</li>
+            <li><b>链接：</b><a href="https://www.modelscope.cn/models/QingHeWenfang/qinghe-wenfang" target="_blank" rel="noopener">https://www.modelscope.cn/models/QingHeWenfang/qinghe-wenfang</a></li>
+          </ul>
+        </div>
+
+        <div class="proj">
+          <div class="proj-title">🚀 数据中台云原生架构改造</div>
+          <ul>
+            <li><b>项目规模：</b>用户 1000 万+，日订单 100 万+，峰值 QPS 50 万+。</li>
+            <li><b>我的角色：</b>运维负责人 / 核心成员。</li>
+            <li><b>技术方案：</b>基于 K8s 构建容器平台（300+ 微服务）、建设 CI/CD 流水线（日均 50 次发布）、参与灰度与蓝绿发布方案设计。</li>
+            <li><b>项目成果：</b>可用性 96.5%→99.95%，发布效率提升 300%，资源利用率提升 40%。</li>
+          </ul>
+        </div>
+
+        <div class="proj">
+          <div class="proj-title">📊 企业级监控运维平台建设</div>
+          <ul>
+            <li><b>我的角色：</b>核心成员。</li>
+            <li><b>技术方案：</b>Prometheus+Grafana（50+ 服务器）、ELK 日志平台（日处理 5TB+）、自动化运维工具、多渠道告警中心。</li>
+            <li><b>项目成果：</b>监控覆盖率 95%+，故障发现从小时级缩短到分钟级，运维效率提升 200%。</li>
+          </ul>
+        </div>
+
+        <div class="proj">
+          <div class="proj-title">🏦 金融级数据库高可用架构建设</div>
+          <ul>
+            <li><b>我的角色：</b>核心成员。</li>
+            <li><b>技术方案：</b>PolarDB/MySQL/PostgreSQL 主从 + 读写分离（10 万+ QPS）、Redis 集群高可用、自动化故障切换（RTO &lt; 30 秒）、秒级监控告警。</li>
+            <li><b>项目成果：</b>数据库可用性 99.99%，故障恢复分钟级，业务零中断。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="card eval">
+        <h2>📝 自我评价</h2>
+        <p>近 8 年云平台运维与稳定性建设经验，擅长大规模分布式系统的运维保障与性能优化；具备多云、数据库（含 Oracle 深度调优）、容器全栈运维能力，并参与平台架构设计与技术方案评审。近期拓展至大模型垂直微调方向，具备较强的故障定位与高压应急处理能力。</p>
+
+        <div class="motto-block">
+          <b>工作信条：</b>运维的本质是对"稳定"的敬畏——每一次变更都可能是下一次故障的起点。我坚持"变更可回滚、操作可追溯、风险可量化"，把每一次上线、每一行 SQL、每一个配置项都当作对业务承诺来对待；宁可在事前多花十分钟评审，也不在事后花十小时救火。
+        </div>
+        <div class="motto-block">
+          <b>座右铭：</b>行百里者半九十。系统稳定不是冲刺出来的，而是无数个"最后再检查一遍"的日常累积出来的。越是临近发布、越是深夜割接、越是看似简单的操作，越要慢一拍、多确认。
+        </div>
+        <div class="motto-block">
+          <b>做事原则：</b>先看清，再动手。遇到故障先看监控、看日志、看变更记录，定位根因后再处置；不靠猜测运维，不靠重启解决问题。每一次故障都形成复盘，把经验沉淀为文档、脚本和告警，让团队不再踩同一个坑。
+        </div>
+        <div class="motto-block">
+          <b>人生信仰：</b>相信"长期主义"——技术没有捷径，真正的成长来自日复一日的积累与复盘。做人做事信奉"诚实、靠谱、利他"：对数据诚实、对承诺靠谱、对团队利他。我始终认为，一个人能走多远，取决于他愿意为别人扛多少事；越是高压时刻，越要成为团队里"能接住事"的那个人。
+        </div>
+        <div class="motto-block">
+          <b>职业态度：</b>保持对新技术的好奇与敬畏，不盲目追新，也不固守旧经验；什么能真正解决业务问题、提升稳定性，就学什么、用什么。在快与稳之间，永远把"稳"放在第一位——因为稳定的系统，才是对用户、对业务、对自己最好的交代。
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    © 2026 梁勇 · 简历最后更新于 2026.09 · 本页由 GitHub Pages 托管
+  </footer>
+
+</div>
+</body>
+</html>
